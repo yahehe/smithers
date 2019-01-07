@@ -1,2 +1,2 @@
 // eslint-disable-next-line import/prefer-default-export
-export const hello = async (ctx) => 'Hello World!';
+module.exports.hello = (ctx) => ctx.body = 'Hello World!';

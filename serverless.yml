@@ -7,7 +7,7 @@ provider:
     service: ${self:service}
 functions:
   api:
-    handler: app.handler
+    handler: src/app.handler
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'

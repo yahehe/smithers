@@ -1,21 +1,21 @@
 const serverless = require('serverless-http');
 const koa = require('koa'); // or any supported framework
 const bodyParser = require('koa-bodyparser');
-const log = require("roarr");
-const logger = require('koa-roarr');
+const logger = require('koa-bunyan-logger');
 const securityHelmet = require('koa-helmet');
 const Router = require('koa-router');
+const { hello } = require('./modules/hello');
 
-const app = koa();
+const app = new koa();
 const router = Router();
-
 app.use(securityHelmet());
 app.use(bodyParser());
-app.use(logger({ log }))
+app.use(logger({ name: 'smithers', level: 'debug' }));
+app.use(logger.requestIdContext());
+app.use(logger.requestLogger());
 
-router.get('/', (ctx, next) => {
+router.get('/hello', hello);
     
-})
 app
   .use(router.routes())
   .use(router.allowedMethods());
