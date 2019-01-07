@@ -1,0 +1,13 @@
+service:
+  name: smithers
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stackTags:
+    service: ${self:service}
+functions:
+  api:
+    handler: app.handler
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'

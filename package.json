@@ -1,0 +1,22 @@
+{
+  "name": "aws-nodejs-ecma-script",
+  "version": "1.0.0",
+  "description": "Serverless webpack example using ecma script",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "The serverless webpack authors (https://github.com/elastic-coders/serverless-webpack)",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless": "^1.35.1",
+    "serverless-http": "^1.8.0"
+  },
+  "dependencies": {
+    "koa": "^2.6.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-helmet": "^4.0.0",
+    "koa-roarr": "^1.1.1",
+    "koa-router": "^7.4.0",
+    "roarr": "^2.12.1"
+  }
+}
